@@ -8,8 +8,8 @@ services:
     container_name: cheshire_cat_core
     depends_on:
       - cheshire-cat-vector-memory
-    #env_file:
-     # - .env
+    env_file:
+     - .env
     environment:
       - PYTHONUNBUFFERED=1
     ports:
@@ -34,8 +34,8 @@ services:
     container_name: cheshire_cat_admin
     depends_on:
       - cheshire-cat-core
-    #env_file:
-     # - .env
+    env_file:
+     - .env
     ports:
       - ${ADMIN_PORT}:3000
     volumes:
